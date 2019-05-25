@@ -1,0 +1,8 @@
+*
+!.gitignore
+!shell.nix
+!.shellhook
+!.conda
+!env.yml
+!pkgs.txt
+!*.jl
