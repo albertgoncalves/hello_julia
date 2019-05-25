@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ $(uname -s) = "Darwin" ]; then
+    alias ls="ls --color=auto"
+    alias ll="ls -l"
+else
+    alias open="xdg-open"
+fi
+
+for d in pkgs data; do
+    if [ ! -d $d ]; then
+        mkdir $d
+    fi
+done
+
+export JULIA_DEPOT_PATH=$(realpath pkgs/)
+julia pkgs.jl

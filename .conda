@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+env=julia
+conda env list | grep $env >/dev/null
+if (( ! $? == 0 )); then
+    conda env create -f env.yml -n $env
+fi
+conda activate $env
